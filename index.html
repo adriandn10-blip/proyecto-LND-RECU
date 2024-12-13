@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BetPro - Modern Betting Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/carrousel.css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-brand">BetPro</div>
+      <div class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#matches">Matches</a>
+        <a href="#bets">My Bets</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="fade-in">Welcome to BetPro</h1>
+        <p class="fade-in">
+          Experience the thrill of sports betting with our modern platform
+        </p>
+        <a href="#matches" class="cta-button fade-in">Start Betting</a>
+      </div>
+    </section>
+    <section class="league-carousel">
+      <h2>Trusted Leagues</h2>
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <img src="https://cdnuploads.aa.com.tr/uploads/Contents/2019/08/08/thumbs_b_c_ce796e74fba47359bf4dc316ab5e3f6f.jpg?v=165257" alt="Liga 1">
+          <img src="https://assets.laliga.com/assets/logos/LL_RGB_h_color/LL_RGB_h_color.png" alt="Liga 2">
+          <img src="https://www.trabajadores.cu/wp-content/uploads/2021/02/Eredivisie-logo.jpg" alt="Liga 3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/MX_logo.png/800px-MX_logo.png" alt="Liga 4">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Ligabolivia.png" alt="Liga 5">
+          <img src="https://library.sportingnews.com/styles/twitter_card_120x120/s3/2022-02/liga-francesa-2020-2021-ds.jpg?itok=SmkuQNAs" alt="Liga 6">
+          <!-- Repetimos para un bucle infinito -->
+          <img src="https://cdnuploads.aa.com.tr/uploads/Contents/2019/08/08/thumbs_b_c_ce796e74fba47359bf4dc316ab5e3f6f.jpg?v=165257" alt="Liga 1">
+          <img src="https://static.wikia.nocookie.net/mundofifn/images/4/45/LaLiga.png/revision/latest?cb=20170924201431&path-prefix=es" alt="Liga 2">
+        </div>
+      </div>
+    </section>
+    <!-- Matches Section -->
+    <section id="matches" class="bets-section">
+      <h2 class="fade-in">Latest Matches</h2>
+      <div id="matchesGrid" class="bets-list fade-in"></div>
+    </section>
+
+    <!-- Betting Section -->
+    <section id="bets" class="bets-section">
+      <h2 class="fade-in">My Bets</h2>
+      <div class="bet-form fade-in">
+        <input type="text" id="betName" placeholder="Bet Name" />
+        <input type="number" id="betAmount" placeholder="Amount" />
+        <input type="text" id="betCategory" placeholder="Category" />
+        <button onclick="betModule.createBet()">Place Bet</button>
+      </div>
+      <div id="betsList" class="bets-list fade-in"></div>
+    </section>
+
+    
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2 class="fade-in">Contact Us</h2>
+      <div class="contact-container">
+        <form id="contactForm" class="contact-form fade-in">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit" class="cta-button">Send Message</button>
+        </form>
+        <div class="contact-info slide-in">
+          <div class="info-item">
+            <span class="icon">📍</span>
+            <p>123 Betting Street, Madrid, Spain</p>
+          </div>
+          <div class="info-item">
+            <span class="icon">📧</span>
+            <p>contact@betpro.com</p>
+          </div>
+          <div class="info-item">
+            <span class="icon">📞</span>
+            <p>+34 123 456 789</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            BetPro is your trusted platform for sports betting, offering
+            competitive odds and a seamless betting experience.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="#home">Home</a>
+          <a href="#matches">Matches</a>
+          <a href="#bets">My Bets</a>
+          <a href="#gallery">Gallery</a>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+          </div>
+        </div>
+      </div>
+     
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/matches.js"></script>
+    <script src="js/bets.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

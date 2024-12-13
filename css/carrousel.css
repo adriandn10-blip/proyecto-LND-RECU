@@ -1,0 +1,48 @@
+:root {
+    --carousel-height: 200px;
+    --carousel-speed: 20s; /* Ajusta la velocidad del carrusel */
+  }
+  
+  .league-carousel {
+    padding: 2rem 0;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    text-align: center;
+  }
+  
+  .league-carousel h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .carousel-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: var(--carousel-height);
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll-left var(--carousel-speed) linear infinite;
+  }
+  
+  .carousel-track img {
+    height: var(--carousel-height);
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
